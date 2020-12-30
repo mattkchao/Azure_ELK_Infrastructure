@@ -29,10 +29,11 @@ The configuration details of each machine may be found below.
 |        Name        |  Function | IP Address | Operating System |
 |:------------------:|:---------:|:----------:|:----------------:|
 | JumpBoxProvisioner |  Gateway  |  10.0.0.5  |       Linux      |
+| Elk-1              |  Monitor  |  10.1.0.4  |       Linux      |
 | Web-1              | Webserver |  10.0.0.8  |       Linux      |
 | Web-2              | Webserver |  10.0.0.9  |       Linux      |
 | Web-3              | Webserver |  10.0.0.10 |       Linux      |
-| Elk-1              |  Monitor  |  10.1.0.4  |       Linux      |
+
 
 
 ### Access Policies
@@ -46,14 +47,13 @@ Machines within the network can only be accessed by each other. The JumpBoxProvi
 
 A summary of the access policies in place can be found in the table below.
 
-|        Name        | Publicly Accessible |   Allowed IP Addresses  |
-|:------------------:|:-------------------:|:-----------------------:|
-| JumpBoxProvisioner |         Yes         |      76.174.216.209     |
-| ELK-1              |         Yes         |      76.174.216.209     |
-| Web-1              |          No         | 10.0.0.0/24 10.0.0.0/24 |
-| Web-2              |          No         | 10.0.0.0/24 10.1.0.0/24 |
-| Web-3              |          No         | 10.0.0.0/24 10.1.0.0/24 |
-| Elk-1              |          No         | 10.0.0.0/24 10.1.0.0/24 |
+|        Name        | Publicly Accessible |    Allowed IP Addresses    |
+|:------------------:|:-------------------:|:--------------------------:|
+| JumpBoxProvisioner |         Yes         |       76.174.216.209       |
+| ELK-1              |         Yes         | 76.174.216.209 10.0.0.0/24 |
+| Web-1              |          No         |   10.0.0.0/24 10.0.1.0/24  |
+| Web-2              |          No         |   10.0.0.0/24 10.0.1.0/24  |
+| Web-3              |          No         |   10.0.0.0/24 10.0.1.0/24  |
 
 
 ### Elk Configuration
