@@ -20,16 +20,16 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly available, in addition to restricting inbound access to the network. In addition, an important security aspect of load balancers is its ability to defend against distributed denial-of-service (DDoS) attacks, thus, further increasing the network's reliability. A Jump Box virtual machine is used as the single node of access and control to all other virtual machines within the network. This provides the benefits of only having to secure and monitor a single access point; fanning in.  
+Load balancing ensures that the application will be highly available, in addition to restricting inbound access to the network. In addition, an important security aspect of load balancers is their ability to defend against distributed denial-of-service (DDoS) attacks, thus, further increasing the network's reliability. A Jump Box virtual machine is used as the single node of access and control to all other virtual machines within the network. This provides the benefits of only having to secure and monitor a single access point; fanning in.  
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the file systems of the VMs on the network and system metrics, such as CPU usage, attampted SSH logins, sudo esclation failures, and etc. In this ELK Stack, Filebeat will be used to collect data about file systems and Metricbeat will be used to collect machine metrics.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the file systems of the VMs on the network and system metrics, such as CPU usage, attempted SSH logins, sudo escalation failures, and etc. In this ELK Stack, Filebeat will be used to collect data about file systems and Metricbeat will be used to collect machine metrics.
 
 The configuration details of each machine may be found below.
 
 |        Name        |  Function | IP Address | Operating System |
 |:------------------:|:---------:|:----------:|:----------------:|
 | JumpBoxProvisioner |  Gateway  |  10.0.0.5  |       Linux      |
-| Elk-1              |  Monitor  |  10.1.0.4  |       Linux      |
+| ELK-1              |  Monitor  |  10.1.0.4  |       Linux      |
 | Web-1              | Webserver |  10.0.0.8  |       Linux      |
 | Web-2              | Webserver |  10.0.0.9  |       Linux      |
 | Web-3              | Webserver |  10.0.0.10 |       Linux      |
@@ -58,7 +58,7 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it saves a significant amount of time.
+Ansible was used to automate configurations of the ELK machine. No configuration was performed manually, which is advantageous because it saves a significant amount of time.
 
 The playbook implements the following tasks:
 - use apt module to install docker.io
@@ -103,7 +103,7 @@ SSH into the control node and follow the steps below:
 [elk]
 10.1.0.4 ansible_python_interpreter=/usr/bin/python3
 
-- Run the playbook, and navigate to "<enter ELK-1 Private IP Address>:5601/app/kibana" via web browser to check that the installation worked as expected.
+- Run the playbook, and navigate to "<enter ELK-1 Private IP Address>:5601/app/kibana" via a web browser to check that the installation worked as expected.
 
 
 ### YAMAL Playbook Setup
